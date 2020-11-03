@@ -29,6 +29,10 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 const emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+interface Shoe {
+  size: number;
+  name: string;
+}
 export default defineComponent({
   setup () {
     const emailRef = reactive({

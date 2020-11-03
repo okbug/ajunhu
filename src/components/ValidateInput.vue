@@ -8,6 +8,7 @@
       v-model="inputRef.val"
       v-bind="$attrs"
     >
+
     <textarea
       v-else
       class="form-control"

@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { defineComponent } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import ColumnList, { ColumnProps } from './components/ColumnList.vue'
 import GlobalHeader, { UserProps } from './components/GlobalHeader.vue'
 import ValidateInput, { RulesProp } from './components/ValidateInput.vue'
@@ -56,10 +56,16 @@ export default defineComponent({
       { type: 'required', message: '不能为空' },
       { type: 'email', message: '输入错误' }
     ]
+    const emailRef = reactive({
+      val: '',
+      error: false,
+      message: ''
+    })
     return {
       list: testData,
       currentUser,
-      emailRules
+      emailRules,
+      emailRef
     }
   }
 })
